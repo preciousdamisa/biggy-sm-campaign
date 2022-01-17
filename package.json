@@ -1,0 +1,19 @@
+{
+  "name": "biggy-sm-campaign",
+  "version": "1.0.0",
+  "description": "The API for Biggy social media campaign",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.7",
+    "express": "^4.17.2",
+    "joi": "^17.5.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.1.6"
+  }
+}
