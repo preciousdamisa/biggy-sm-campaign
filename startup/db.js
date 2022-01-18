@@ -7,7 +7,6 @@ module.exports = function () {
     .connect(dbUrl, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true,
     })
     .then(() => console.log(`Connected to ${dbUrl}`))
     .catch((e) => console.log("Error in connecting to db: " + e));
