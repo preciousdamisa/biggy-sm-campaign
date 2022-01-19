@@ -19,7 +19,7 @@ const signup = async (req, res, next) => {
     if (user)
       return res.status(400).send({ message: "User already registered" });
 
-    user = User({ firstName, lastName, email, phone });
+    user = User({ firstName, lastName, email, phone, entries: 1 });
     await user.save();
 
     const { refId } = req.query;
@@ -32,7 +32,14 @@ const signup = async (req, res, next) => {
 
     res.status(201).send({
       message: "Signup successful",
-      data: _.pick(user, ["_id", "firstName", "lastName", "email", "phone"]),
+      data: _.pick(user, [
+        "_id",
+        "firstName",
+        "lastName",
+        "email",
+        "phone",
+        "entries",
+      ]),
     });
   } catch (e) {
     next(new Error("Error in signing up: " + e));
@@ -59,7 +66,14 @@ const login = async (req, res, next) => {
 
     res.send({
       message: "Login successful",
-      data: _.pick(user, ["_id", "firstName", "lastName", "email", "phone"]),
+      data: _.pick(user, [
+        "_id",
+        "firstName",
+        "lastName",
+        "email",
+        "phone",
+        "entries",
+      ]),
     });
   } catch (e) {
     next(new Error("Error in logging in: " + e));
